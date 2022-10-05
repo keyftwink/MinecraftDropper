@@ -6,9 +6,9 @@ import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		Lwjgl3ApplicationConfiguration cfg = new Lwjgl3ApplicationConfiguration();
-		cfg.setTitle("DropGame");
-		cfg.setWindowedMode(800, 800);
-		new Lwjgl3Application(new DropGame(), cfg);
+		cfg.setTitle("MinecraftDrop");
+		cfg.setWindowedMode(1920, 1080);
+		new Lwjgl3Application(new MinecraftDrop(), cfg);
 
 	}
 }

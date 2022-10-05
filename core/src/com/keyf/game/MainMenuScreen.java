@@ -4,32 +4,31 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.utils.ScreenUtils;
 
 public class MainMenuScreen implements Screen {
 
-    final DropGame game;
+    final MinecraftDrop game;
 
     OrthographicCamera camera;
 
-    public MainMenuScreen(final DropGame gam) {
+    public MainMenuScreen(final MinecraftDrop gam) {
         game = gam;
 
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, 800, 480);
-
-
+        camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
     }
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(0, 0, 0.2f, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        ScreenUtils.clear(0, 0, 0.2f, 1);
 
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
 
         game.batch.begin();
+        game.batch.draw(game.menuBackground, 0,0);
         game.font.draw(game.batch, "Welcome to MinecraftDrop!!! ", 100, 150);
         game.font.draw(game.batch, "Tap anywhere to begin!", 100, 100);
         game.batch.end();

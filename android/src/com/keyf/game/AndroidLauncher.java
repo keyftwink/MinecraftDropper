@@ -14,6 +14,6 @@ public class AndroidLauncher extends AndroidApplication {
 		cfg.useAccelerometer = false;
 		cfg.useCompass = false;
 
-		initialize(new DropGame(), cfg);
+		initialize(new MinecraftDrop(), cfg);
 	}
 }
