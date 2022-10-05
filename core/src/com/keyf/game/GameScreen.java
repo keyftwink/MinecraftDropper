@@ -86,7 +86,7 @@ public class GameScreen implements Screen {
         if (isModeActive & time < 1000000000){
             time+=25000000;
         }
-        food.x = MathUtils.random(0, Gdx.graphics.getWidth() - steveImg.getWidth() );
+        food.x = MathUtils.random(0, 800 - 64);
 
         if(MathUtils.randomBoolean(0.40f)){
             type =0;
@@ -164,6 +164,7 @@ public class GameScreen implements Screen {
                     time = 600;
                     isModeActive = true;
                 }
+                pickSound.play();
             }
         }
     }
